@@ -10899,3 +10899,105 @@ a.text-dark:focus {
   }
 }
 
+body {
+  width: 100%;
+}
+
+body .create_page {
+  background-color: whitesmoke;
+  width: 800px;
+  height: 660px;
+  border-radius: 0.8rem;
+  margin-left: 320px;
+}
+
+body .create_page .create_form {
+  width: 600px;
+  height: 600px;
+  margin-left: 100px;
+  margin-top: 50px;
+  position: absolute;
+}
+
+body .create_page .create_form .form {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+body .create_page .create_form .form .form_input {
+  margin-left: 55px;
+  height: 50px;
+  width: 500px;
+}
+
+body .create_page .create_form .form .image_input {
+  margin-left: 10px;
+}
+
+body .create_page .create_form .form .error {
+  color: red;
+}
+
+body .create_page .create_form .text_form {
+  height: 200px;
+  width: 600px;
+  margin-bottom: 20px;
+  margin-left: 45px;
+}
+
+body .create_page .create_form .text_form .desc_input {
+  margin-left: 10px;
+  width: 500px;
+  height: 200px;
+}
+
+body .create_page .create_form .text_form .error {
+  color: red;
+}
+
+body .create_page .create_form .image_form {
+  height: 50px;
+}
+
+body .create_page .create_form .image_form label {
+  width: 60px;
+  height: 10px;
+  margin-left: 55px;
+}
+
+body .create_page .create_form .image_form .image_input {
+  margin-top: 8px;
+}
+
+body .create_page .create_form .image_form .img_error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+body .create_page .create_form .link_form {
+  height: 80px;
+  width: 600px;
+  margin-bottom: 20px;
+  margin-left: 45px;
+}
+
+body .create_page .create_form .link_form .link_input {
+  margin-left: 11px;
+  margin-top: 10px;
+  height: 50px;
+  width: 500px;
+}
+
+body .create_page .create_form .post_button {
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body .create_page .create_form .post_button .submit_button {
+  width: 100px;
+  height: 40px;
+  margin-left: 250px;
+  background-color: cornflowerblue;
+}
+
