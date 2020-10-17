@@ -18,7 +18,7 @@ class CreateReviewsTable extends Migration
             $table->string('title');
             $table->string('artist');
             $table->text('desc');
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->text('link')->nullable();
             $table->foreignId('user_id')->constrained("users");
             $table->timestamps();

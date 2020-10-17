@@ -28,7 +28,7 @@ Route::get('/review/create', [App\Http\Controllers\CreateReviewController::class
 	->name("create_review");
 Route::post('/review/create', [App\Http\Controllers\CreateReviewController::class, "store"])
     ->name("store_review");
-    
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

@@ -5,11 +5,13 @@
 @foreach ($review_list as $review)
 <div class="review">
   <h2>{{ $review->title }}</h2>
+  <div class="review_artist">{{ $review->artist }}</div>
   <div class="review_content">
-    <div class="review_artist">{{ $review->artist }}</div>
-    <img src="{{ asset('/storage/img/'.$review->image) }}" style="width: 150px;">
+    <img src="{{ asset('storage/'.$review->image) }}" class="review_image">
+    <div class="review_desc">{{ $review->desc }}</div>
   </div>
 </div>
 @endforeach
+{{ $review_list->links() }}
 
 @endsection
