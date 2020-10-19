@@ -15,13 +15,13 @@
       <div class="review_desc">{{ $review->desc }}</div>
       
       <div class="review_link">
-        <iframe width="400" height="139" src="https://www.youtube.com/embed/{{ $review->link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="400" height="159" src="https://www.youtube.com/embed/{{ $review->link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
 
   </div>
 </div>
 @endforeach
-{{ $review_list->links() }}
+<div class="paginate">{{ $review_list->links() }}</div>
 
 @endsection

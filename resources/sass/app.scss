@@ -7,6 +7,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
 @import 'main.scss';
 @import 'review/create_review.scss';
 @import 'review/index_review.scss';
