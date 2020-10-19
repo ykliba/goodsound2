@@ -10,14 +10,6 @@ use Validator;
 
 class CreateReviewController extends Controller
 {
-  // protected $validationRules = [
-	// 	"title" => ["required", "string"],
-	// 	"artist" => ["required", "string"],
-	// 	"desc" => ["required", "string"],
-	// 	"image" => ["required", "mimes:jpeg,png,jpg,bmb"],
-	// 	"link" => ["nullable", "string"]
-	// ];
-
   function __construct(){
 		$this->middleware('auth');
 	}

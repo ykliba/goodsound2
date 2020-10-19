@@ -21,6 +21,8 @@ Route::get('/', [App\Http\Controllers\IndexReviewController::class, 'index'])->n
 Route::get('/review/create', [App\Http\Controllers\CreateReviewController::class, "create"])->name("create_review");
 Route::post('/review/create', [App\Http\Controllers\CreateReviewController::class, "store"])->name("store_review");
 
+Route::get('/review/show', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');

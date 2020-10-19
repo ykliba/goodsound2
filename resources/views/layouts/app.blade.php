@@ -60,12 +60,15 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('show_review') }}">
+                                        {{ __('Mypage') }}
+                                    </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                     <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('create_review') }}">投稿する</a>
+                                      <a class="nav-link" href="{{ route('create_review') }}">新規投稿</a>
                                     </li>
                                 </div>
                             </li>
