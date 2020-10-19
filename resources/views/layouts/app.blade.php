@@ -64,6 +64,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="{{ route('create_review') }}">投稿する</a>
+                                    </li>
                                 </div>
                             </li>
                         @endguest

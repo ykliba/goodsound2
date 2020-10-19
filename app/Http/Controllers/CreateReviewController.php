@@ -27,19 +27,6 @@ class CreateReviewController extends Controller
 	}
 
 	function store(Request $request){
-	 
-		// $path = $request->file('image')->store('img');
-
-		// //入力値の受け取り
-		// $validatedData = $request->validate($this->validationRules);
-		
-		// //作成するユーザーIDを設定\
-		// $validatedData["user_id"] = \Auth::id();
-	
-		// $vali = $validatedData->only(['title', 'artist', 'desc', 'link'])->toArray();
-    
-		// //レビューの保存
-		// Review::create($vali, ['image' => basename($path)]);
 	  $review = new Review;
 		
 		$input = $request->only('title', 'artist', 'desc', 'link');
@@ -55,10 +42,14 @@ class CreateReviewController extends Controller
 			  ->withErrors($validator)
 			  ->withInput();
 		}
+
+		$url = $input["link"];
+		$youtube_id = substr(strrchr($url, "="), 1);
+
 		$review->title = $input['title'];
 		$review->artist = $input['artist'];
 		$review->desc = $input["desc"];
-		$review->link = $input["link"];
+		$review->link = $youtube_id;
 		$review->user_id = \Auth::id();
 		$review->save();
 
