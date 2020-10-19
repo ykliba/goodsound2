@@ -11024,10 +11024,17 @@ body .create_page .create_form .post_button .submit_button {
   height: 300px;
 }
 
-.review .review_content .review_desc {
+.review .review_content .content_right .review_desc {
   width: 960px;
   height: 150px;
   margin-left: 50px;
   overflow: scroll;
+}
+
+.review .review_content .content_right .review_link {
+  height: 149px;
+  width: 500px;
+  margin-left: 50px;
+  margin-top: 10px;
 }
 
