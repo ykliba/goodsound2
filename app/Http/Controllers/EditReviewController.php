@@ -3,25 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\Review;
 use App\Models\User; 
 use Storage;
 use Validator;
 
-class CreateReviewController extends Controller
+class EditReviewController extends Controller
 {
-  function __construct(){
+    function __construct(){
 		$this->middleware('auth');
-	}
-		
-	function create(){
-    return view("review.create_review");
-	}
+    }
+    
+    function edit(Request $request, $id) {
+      $review = Review::find($id);
+      if(!$review){
+        return back()->withError("編集できません");
+      }
+      return view('review.edit_review', compact('review'));
+    }
 
-	function store(Request $request){
-	  $review = new Review;
-		
-		$input = $request->only('title', 'artist', 'desc', 'link');
+    function update(Request $request, $id) {
+        $review = Review::find($id);
+		if(!$review){
+			return back()->withError("編集できません");
+        }
+        
+        $input = $request->only('title', 'artist', 'desc', 'link');
 		$uploadInput = $request->only("image");
 		
 		// バリデーション
@@ -38,15 +46,15 @@ class CreateReviewController extends Controller
 		}
 		// 画像バリデーション
 		$uploadValidator = Validator::make($uploadInput, [
-      'image' => 'file|image|mimes:jpeg,jpg,png'
+          'image' => 'file|image|mimes:jpeg,jpg,png'
 		]);
 		if ($uploadValidator->fails()) {
 			return redirect('/review/create')
 			  ->withErrors($validator)
 			  ->withInput();
-		}
+        }
 
-		// youtubeのurlからidを取得
+        // youtubeのurlからidを取得
 		$url = $input["link"];
 		$youtube_id = substr(strrchr($url, "="), 1);
 		
@@ -56,7 +64,7 @@ class CreateReviewController extends Controller
 		$review->desc = $input["desc"];
 		$review->link = $youtube_id;
 		$review->user_id = \Auth::id();
-		$review->save();
+		$review->update();
 		
 		// 画像保存
 		$is_change_image = false;		
@@ -68,9 +76,8 @@ class CreateReviewController extends Controller
 			}
 		}
 		if($is_change_image){
-			$review->save();
+			$review->update();
 		}
-
-		return redirect('/');
-	}
+        return redirect('/');
+    }
 }

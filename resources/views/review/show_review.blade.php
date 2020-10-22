@@ -4,7 +4,7 @@
 
 @foreach ($review_list as $review)
 <div class="review">
-  <h2 class="review_title">{{ $review->title }}</h2>
+  <a class="review_title" href="{{ route('edit_review', [$review->id]) }}">{{ $review->title }}</a>
   <div class="review_artist">{{ $review->artist }}</div>
   <div class="review_content">
     <img src="{{ asset('storage/'.$review->image) }}" class="review_image">

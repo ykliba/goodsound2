@@ -23,6 +23,9 @@ Route::post('/review/create', [App\Http\Controllers\CreateReviewController::clas
 
 Route::get('/review/show', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
 
+Route::get('/review/edit/{id}', [App\Http\Controllers\EditReviewController::class, "edit"])->name("edit_review");
+Route::post('/review/update/{id}', [App\Http\Controllers\EditReviewController::class, "update"])->name("update_review");
+
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
