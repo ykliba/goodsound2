@@ -2,6 +2,9 @@
   color: whitesmoke;
   padding: 0 70px;
   margin-bottom: 60px;
+  .review_title {
+    font-size: 18px;
+  }
   .review_content {
     display: flex;
     img {
@@ -15,12 +18,25 @@
         margin-left: 50px;
         overflow: scroll;
       }
-      .review_link {
+      .right_low {
         height: 170px;
-        width: 500px;
+        width: 960px;
         margin-left: 50px;
-        margin-top: 10px;
+        padding-top: 10px;
+        display: flex;
+        .review_link {
+          height: 160px;
+          width: 500px;
+        }
+        .comment {
+          height: 160px;
+          width: 500px;
+          background-color: #666666;
+          border-radius: 0.3rem;
+          overflow: scroll;
+        }
       }
+
     }
   }
 }
