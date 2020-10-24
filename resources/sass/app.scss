@@ -13,6 +13,17 @@
 
 @tailwind utilities;
 
+// Font Awesome
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 @import 'main.scss';
 @import 'review/create_review.scss';
 @import 'review/index_review.scss';
+
+@import 'comment.scss';
+
+@import 'modal.scss';

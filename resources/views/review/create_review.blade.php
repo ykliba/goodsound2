@@ -9,7 +9,7 @@
         
         <div class="form">
           <!-- タイトル -->
-          <input type="text" name="title" class="form_input" value="{{ old('title') }}" placeholder="title">
+          <input type="text" name="title" class="form_input" value="{{ old('title') }}" placeholder="作品タイトル">
           @if ($errors->has('title'))
 					  <div class="error">{{ $errors->first('title') }}</div>
 					@endif
@@ -17,7 +17,7 @@
 
         <div class="form">
           <!-- アーティスト名 -->
-          <input type="text" name="artist" class="form_input" value="{{ old('artist') }}" placeholder="artist">
+          <input type="text" name="artist" class="form_input" value="{{ old('artist') }}" placeholder="アーティスト名">
           @if ($errors->has('artist'))
 					  <div class="error">{{ $errors->first('artist') }}</div>
 					@endif
@@ -25,7 +25,7 @@
 
         <div class="text_form">
           <!-- 説明 -->
-          <textarea type="text" name="desc" class="desc_input" rows="10" placeholder="text">{{ old('desc') }}</textarea>
+          <textarea type="text" name="desc" class="desc_input" rows="10" placeholder="レビュー">{{ old('desc') }}</textarea>
           @if ($errors->has('desc'))
 					  <div class="error">{{ $errors->first('desc') }}</div>
 					@endif
@@ -33,7 +33,7 @@
 
         <div class="image_form">
           <!-- ジャケット画像 -->
-          <label>IMAGE</label>
+          <label>画像</label>
           <input type="file" name="image" class="image_input" >
           @if ($errors->has('image'))
 					  <div class="img_error">{{ $errors->first('image') }}</div>

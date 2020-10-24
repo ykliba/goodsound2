@@ -1,12 +1,23 @@
+.mypage {
+  width: 100%;
+  p {
+    color: #888888;
+    text-align: center;
+  }
+}
 .review {
   color: whitesmoke;
   padding: 0 70px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+ 
+
   .review_title {
     font-size: 18px;
   }
   .review_content {
     display: flex;
+    padding-bottom: 64px;
+    border-bottom: 4px solid #888888;
     img {
         width: 300px;
         height: 300px;
@@ -14,24 +25,49 @@
     .content_right {
       .review_desc {
         width: 960px;
-        height: 130px;
+        height: 110px;
         margin-left: 50px;
         overflow: scroll;
       }
+      .mid {
+        height: 30px;
+        text-align: right;
+        margin-right: 20px;
+        .user_name {
+          line-height: 30px;
+        }
+      }
       .right_low {
-        height: 170px;
+        height: 162px;
         width: 960px;
         margin-left: 50px;
-        padding-top: 10px;
+        
         display: flex;
         .review_link {
           height: 160px;
           width: 500px;
         }
+        .icon {
+          width: 50px;
+          height: 160px;
+          margin-right: 30px;
+          
+          .comment_icon {
+            margin-top: 20px;
+            cursor: pointer;
+          }
+          .delete_icon {
+            margin-top: 25px;
+            cursor: pointer;
+          }
+
+        }
+
         .comment {
           height: 160px;
           width: 500px;
-          background-color: #666666;
+          margin-right: 10px;
+          background-color: #888888;
           border-radius: 0.3rem;
           overflow: scroll;
         }

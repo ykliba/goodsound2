@@ -11,7 +11,7 @@
     <div class="content_right">
       <div class="review_desc">{{ $review->desc }}</div>
       <div class="mid">
-        <a class="user_name" href="">by: {{ $review->user->name }}</a>
+        <div class="user_name">投稿日:{{ date("Y年 m月 d日",strtotime($review_list->created_at)) }}</div>
       </div>
       <div class="right_low">
         <div class="review_link">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="comment">
- 
+          <div class="comment_user"></div>
         </div>
       </div>
     </div>
