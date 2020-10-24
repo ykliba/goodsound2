@@ -11,4 +11,13 @@ class Review extends Model
 
     protected $table = "reviews";
     protected $fillable = ["title", "artist", "desc", "image", "link", "user_id"];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function comment() {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

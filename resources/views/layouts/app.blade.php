@@ -11,13 +11,18 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
+    
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+
 </head>
 <body class="app_body">
     <div id="app">
@@ -41,11 +46,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
                                 </li>
                             @endif
                         @else
@@ -82,5 +87,42 @@
             @yield('content')
         </main>
     </div>
+<script src="/js/app.js"></script>
+<script>
+Vue.component('delete-modal',{
+  template : `
+    <div id="overlay">
+        <div id="content">
+            <p>レビューを削除しますか?</p>
+            <p><slot></slot></p>
+            <div class="delete_button">
+                <a class="delete_yes">Yes</a>
+                <a class="delete_no" v-on:click="clickEvent">No</a>
+            </div>
+        </div>
+    </div>
+    `,
+    methods :{
+      clickEvent: function(){
+        this.$emit('from-child')
+       }
+    }
+})
+
+new Vue({
+  el: '#app3',
+  data: {
+    showContent: false
+  },
+  methods:{
+    openModal: function(){
+      this.showContent = true
+    },    
+    closeModal: function(){
+      this.showContent = false
+    },
+  }
+})
+</script> 
 </body>
 </html>

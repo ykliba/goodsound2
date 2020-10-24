@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// review
 Route::get('/', [App\Http\Controllers\IndexReviewController::class, 'index'])->name("index_review");
 
 Route::get('/review/create', [App\Http\Controllers\CreateReviewController::class, "create"])->name("create_review");
@@ -26,6 +27,15 @@ Route::get('/review/show', [App\Http\Controllers\ShowReviewController::class, "s
 Route::get('/review/edit/{id}', [App\Http\Controllers\EditReviewController::class, "edit"])->name("edit_review");
 Route::post('/review/update/{id}', [App\Http\Controllers\EditReviewController::class, "update"])->name("update_review");
 
+Route::get('/comment/create', [App\Http\Controllers\CommentController::class, "create"])->name("create_comment");
+Route::post('/comment/create', [App\Http\Controllers\CommentController::class, "store"])->name("store_comment");
+
+// user
+Route::get('user/show/', [App\Http\Controllers\UserController::class, "show"])->name('show_user');
+
+// Route::get('/sample', function () {
+//   return view('sample');
+// });
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
