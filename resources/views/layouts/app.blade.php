@@ -11,7 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
     
     
     <!-- Fonts -->
@@ -91,7 +93,7 @@
 <script>
 Vue.component('delete-modal',{
   template : `
-    <div id="overlay">
+    <div id="overlay" v-on:click="clickEvent">
         <div id="content">
             <p>レビューを削除しますか?</p>
             <p><slot></slot></p>
@@ -111,6 +113,51 @@ Vue.component('delete-modal',{
 
 new Vue({
   el: '#app3',
+  data: {
+    showContent: false
+  },
+  methods:{
+    openModal: function(){
+      this.showContent = true
+    },    
+    closeModal: function(){
+      this.showContent = false
+    },
+  }
+})
+
+Vue.component('comment-modal', {
+    template : `
+      <div id="overlay" v-on:click="clickEvent">
+        <div id="content_comment">
+            <div class="comment_form">
+              <form method="post" action="{{ route('store_comment') }}">
+                @csrf
+                <input type="hidden" name="review_id" >
+                <input type="hidden" name="user_id" >
+                <div class="text_form">
+                  <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
+                  @if ($errors->has('message'))
+                            <div class="error">{{ $errors->first('message') }}</div>
+                            @endif
+                </div>
+                <div class="post_button">
+                  <input type="submit" value="POST" class="submit_button">
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+      `,
+      methods :{
+        clickEvent: function(){
+          this.$emit('from-child')
+         }
+      }
+})
+
+new Vue({
+  el: '#app4',
   data: {
     showContent: false
   },

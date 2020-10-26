@@ -71,6 +71,6 @@ class CreateReviewController extends Controller
 			$review->save();
 		}
 
-		return redirect('/');
+		return view("review.store_review");
 	}
 }
