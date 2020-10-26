@@ -22,7 +22,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-// Vue.component('delete-modal',require('./components/DeleteModalComponent.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,9 +32,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 
 
-const app = new Vue({
-    el: '#app2'
+// const app = new Vue({
+//     el: '#app2'
 
-});
+// });
 
 

@@ -24,6 +24,7 @@ Route::post('/review/create', [App\Http\Controllers\CreateReviewController::clas
 
 Route::get('/review/show', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
 
+
 Route::get('/review/edit/{id}', [App\Http\Controllers\EditReviewController::class, "edit"])->name("edit_review");
 Route::post('/review/update/{id}', [App\Http\Controllers\EditReviewController::class, "update"])->name("update_review");
 
@@ -31,7 +32,7 @@ Route::get('/comment/create', [App\Http\Controllers\CommentController::class, "c
 Route::post('/comment/create', [App\Http\Controllers\CommentController::class, "store"])->name("store_comment");
 
 // user
-Route::get('user/show/', [App\Http\Controllers\UserController::class, "show"])->name('show_user');
+Route::get('user/show', [App\Http\Controllers\UserController::class, "show"])->name('show_user');
 
 // Route::get('/sample', function () {
 //   return view('sample');

@@ -6,12 +6,13 @@
     <div class="comment_form">
       <form method="post" action="{{ route('store_comment') }}">
         @csrf
- 
+        <input type="hidden" name="review_id" value="{{ $review->id }}">
+        <input type="hidden" name="user_id" >
         <div class="text_form">
           <!-- 説明 -->
-          <textarea type="text" name="desc" class="desc_input" rows="10" placeholder="コメント入力">{{ old('desc') }}</textarea>
-          @if ($errors->has('desc'))
-					  <div class="error">{{ $errors->first('desc') }}</div>
+          <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
+          @if ($errors->has('message'))
+					  <div class="error">{{ $errors->first('message') }}</div>
 					@endif
         </div>
         
@@ -21,8 +22,6 @@
 
       </form>
     </div>
-
-  
   </div>
 </body>
 @endsection

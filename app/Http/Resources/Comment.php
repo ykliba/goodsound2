@@ -13,13 +13,5 @@ class Comment extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function toArray($request)
-    {
-      return [
-        'message' => $this->message,
-        'user' => new UserResource($this->user),
-        'created_at' => $this->created_at,
-        'updated_at' => $this->updated_at
-      ];
-    }
+
 }

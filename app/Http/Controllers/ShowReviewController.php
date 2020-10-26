@@ -12,7 +12,7 @@ class ShowReviewController extends Controller
 		$this->middleware('auth');
     }
     
-    function show(Request $request) {
+    function show() {
       $review_list = Review::where("user_id","=",\Auth::id())->orderby('id', 'desc')->paginate(5);
       return view('review.show_review', compact('review_list'));
     }
