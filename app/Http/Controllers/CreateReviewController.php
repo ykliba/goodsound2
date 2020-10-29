@@ -42,7 +42,7 @@ class CreateReviewController extends Controller
 		]);
 		if ($uploadValidator->fails()) {
 			return redirect('/review/create')
-			  ->withErrors($validator)
+			  ->withErrors($uploadValidator)
 			  ->withInput();
 		}
 
