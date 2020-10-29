@@ -8,9 +8,10 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function show($user_id) {
-        $review_list = Review::where($user_id)->orderBy('created_at', 'desc')->paginate(5);
-        return view::make('user.show_user')->with('review_list', $review_list);
+    public function show(User $user) {
+        $user = User::find($user->id);
+        $review_list = Review::where("user_id", $user->id)->orderBy('created_at', 'desc')->paginate(5);
+        return view('user.show_user')->with($review_list);
         
         
         

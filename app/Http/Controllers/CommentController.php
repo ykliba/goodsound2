@@ -13,20 +13,28 @@ class CommentController extends Controller
 		$this->middleware('auth');
     }
 
-    function create() {
+    function create($id) {
       return view('comment.create_comment');
     }
 
     function store(Request $request) {
-      $data = [
-        'user_id' => $request->user()->id,
-        'review_id' => $request->review_id,
-        'message' => $request->message
-      ];
+     $rules = [
+       'message' => 'required'
+     ];
 
-      $comment = new Comment;
-      $comment->fill($data)->save();
-      
-      return redirect('/', [$data['review_id']]);
+     $vali_message = array(
+       'message.required' => '本文を正しく入力してください'
+     );
+
+     $validator = Validator::make(Request::all(), $rules, $vali_message);
+
+     if ($validator->passs()) {
+       $comment = new Comment;
+       $comment->user_id = $request::get('user_id');
+       $comment->review_id = $request::get('review_id');
+       $comment->message = $request::get('message');
+       $comment->save();
+       return redirect('/');
+     }
     }
 }

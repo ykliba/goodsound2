@@ -129,50 +129,50 @@ new Vue({
   }
 })
 
-Vue.component('comment-modal', {
-    template : `
-      <div id="overlay" v-on:click="clickEvent">
-        <div id="content_comment">
-            <div class="comment_form">
-              <form method="post" action="{{ route('store_comment') }}">
-                @csrf
-                <input type="hidden" name="review_id" >
-                <input type="hidden" name="user_id" >
-                <div class="text_form">
-                  <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
-                  @if ($errors->has('message'))
-                            <div class="error">{{ $errors->first('message') }}</div>
-                            @endif
-                </div>
-                <div class="post_button">
-                  <input type="submit" value="POST" class="submit_button">
-                </div>
-              </form>
-            </div>
-        </div>
-      </div>
-      `,
-      methods :{
-        clickEvent: function(){
-          this.$emit('from-child')
-         }
-      }
-})
+// Vue.component('comment-modal', {
+//     template : `
+//       <div id="overlay" v-on:click="clickEvent">
+//         <div id="content_comment">
+//             <div class="comment_form">
+//               <form method="post" action="{{ route('store_comment') }}">
+//                 @csrf
+//                 <input type="hidden" name="review_id" >
+//                 <input type="hidden" name="user_id" >
+//                 <div class="text_form">
+//                   <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
+//                   @if ($errors->has('message'))
+//                             <div class="error">{{ $errors->first('message') }}</div>
+//                             @endif
+//                 </div>
+//                 <div class="post_button">
+//                   <input type="submit" value="POST" class="submit_button">
+//                 </div>
+//               </form>
+//             </div>
+//         </div>
+//       </div>
+//       `,
+//       methods :{
+//         clickEvent: function(){
+//           this.$emit('from-child')
+//          }
+//       }
+// })
 
-new Vue({
-  el: '#app4',
-  data: {
-    showContent: false
-  },
-  methods:{
-    openModal: function(){
-      this.showContent = true
-    },    
-    closeModal: function(){
-      this.showContent = false
-    },
-  }
-})
+// new Vue({
+//   el: '#app4',
+//   data: {
+//     showContent: false
+//   },
+//   methods:{
+//     openModal: function(){
+//       this.showContent = true
+//     },    
+//     closeModal: function(){
+//       this.showContent = false
+//     },
+//   }
+// })
 </script> 
 </body>
 </html>

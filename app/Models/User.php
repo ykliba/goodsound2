@@ -41,11 +41,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function review() {
+    public function reviews() {
         return $this->hasMany('App\Models\Review'); 
     }
 
-    public function comment() {
+    public function comments() {
         return $this->hasMany('App\Models\Comment');
     }
 }
