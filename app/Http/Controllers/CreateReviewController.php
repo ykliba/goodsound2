@@ -70,7 +70,7 @@ class CreateReviewController extends Controller
 		if($is_change_image){
 			$review->save();
 		}
-
+    \Debugbar::addMessage($review);
 		return view("review.store_review");
 	}
 }

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comment;
-use App\Models\User;
-use Validator;
+use Auth;
+
 
 class CommentController extends Controller
 {
@@ -13,28 +13,19 @@ class CommentController extends Controller
 		$this->middleware('auth');
     }
 
-    function create($id) {
-      return view('comment.create_comment');
+    function create(Request $request, $id) {
+      $user_id = Auth::id();
+      $review_id = $id;
+      return view('comment.create_comment', ["user_id" => $user_id, "review_id" => $review_id]);
     }
 
     function store(Request $request) {
-     $rules = [
-       'message' => 'required'
-     ];
-
-     $vali_message = array(
-       'message.required' => '本文を正しく入力してください'
-     );
-
-     $validator = Validator::make(Request::all(), $rules, $vali_message);
-
-     if ($validator->passs()) {
-       $comment = new Comment;
-       $comment->user_id = $request::get('user_id');
-       $comment->review_id = $request::get('review_id');
-       $comment->message = $request::get('message');
-       $comment->save();
-       return redirect('/');
-     }
+      $comment = new Comment;
+      $comment->user_id = $request['user_id'];
+      $comment->review_id = $request['review_id'];
+      $comment->message = $request['message'];
+      $comment->save();
+      
+      return Redirect::back();
     }
 }

@@ -22,7 +22,7 @@ Route::get('/', [App\Http\Controllers\IndexReviewController::class, 'index'])->n
 Route::get('/review/create', [App\Http\Controllers\CreateReviewController::class, "create"])->name("create_review");
 Route::post('/review/create', [App\Http\Controllers\CreateReviewController::class, "store"])->name("store_review");
 
-Route::get('/review/show', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
+Route::get('/review/show/{id}', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
 
 
 Route::get('/review/edit/{id}', [App\Http\Controllers\EditReviewController::class, "edit"])->name("edit_review");
@@ -33,7 +33,7 @@ Route::post('/comment/create', [App\Http\Controllers\CommentController::class, "
 
 // user
 Route::get('user/show/{id}', [App\Http\Controllers\UserController::class, "show"])->name('show_user');
-
+Route::get('user/index', [App\Http\Controllers\UserController::class, "index"])->name(('index_user'));
 // Route::get('/sample', function () {
 //   return view('sample');
 // });
