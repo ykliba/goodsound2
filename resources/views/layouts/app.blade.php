@@ -10,7 +10,8 @@
     <title>{{ config('app.name', 'goodsounds') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="/js/app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
  
@@ -75,7 +76,7 @@
                                         @csrf
                                     </form>
                                     <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('create_review') }}">新規投稿</a>
+                                      <a class="nav-link" href="{{ route('create_review') }}">レビュー投稿</a>
                                     </li>
                                 </div>
                             </li>
@@ -90,19 +91,23 @@
         </main>
     </div>
 
-<script src="/js/app.js">
 
-</script>
-<script>
+<!-- <script>
 Vue.component('delete-modal',{
+  export default {
+    props: ['review'],
+  },
   template : `
     <div id="overlay" v-on:click="clickEvent">
         <div id="content">
             <p>レビューを削除しますか?</p>
             <p><slot></slot></p>
             <div class="delete_button">
-                <a class="delete_yes">Yes</a>
-                <a class="delete_no" v-on:click="clickEvent">No</a>
+              
+                @csrf
+                <button type="submit" class="delete_yes">Yes</button>
+                <button type="submit" class="delete_no" v-on:click="clickEvent">No</button>
+              </form>
             </div>
         </div>
     </div>
@@ -115,68 +120,22 @@ Vue.component('delete-modal',{
 })
 
 new Vue({
-  el: '#app3',
+   el: '#app3',
   data: {
     showContent: false
   },
-  methods:{
+  methods:{ 
     openModal: function(){
-      this.showContent = true
+    this.showContent = true
     },    
     closeModal: function(){
-      this.showContent = false
+    this.showContent = false
     },
-  }
-})
+},
 
-Vue.component('comment-modal', {
-    props: ['userId', 'reviewId'],
-    template : `
-      <div id="overlay2" >
-        <div id="content_comment">
-            <div class="comment_form">
-              <form method="post" action="{{ route('store_comment') }}">
-                @csrf
-
-                <input type="hidden" name="user_id" value="{{ 'userId' }}">
-                <input type="hidden" name="review_id" value="{{ 'reviewId' }}">
-                
-                <div class="text_form">
-                  <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
-                  @if ($errors->has('message'))
-                            <div class="error">{{ $errors->first('message') }}</div>
-                            @endif
-                </div>
-                <div class="post_button">
-                  <input type="submit" value="SEND" class="submit_button">
-                  <input class="cancel_button" value="CANCEL" v-on:click="clickEvent">
-                </div>
-              </form>
-            </div>
-        </div>
-      </div>
-      `,
-      methods :{
-        clickEvent: function(){
-          this.$emit('from-child')
-         }
-      }
 })
+</script>  -->
 
-new Vue({
-  el: '#app4',
-  data: {
-    showContent: false
-  },
-  methods:{
-    openModal: function(){
-      this.showContent = true
-    },    
-    closeModal: function(){
-      this.showContent = false
-    },
-  }
-})
-</script> 
+
 </body>
 </html>
