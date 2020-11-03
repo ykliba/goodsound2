@@ -19,12 +19,8 @@
         
         <div class="post_button">
           <input type="submit" value="SEND" class="submit_button">
+          <input type="submit" class="cancel_button" value="CANCEL" v-on:click="clickEvent">
         </div>
-        <div class="post_button">
-          <input type="submit" class="submit_button" value="CANCEL" v-on:click="clickEvent">
-        </div>
-        
-
       </form>
     </div>
   </div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Review;
-use App\Models\User; 
+use App\Models\User;
 use Auth;
 
 class UserController extends Controller
@@ -14,21 +14,13 @@ class UserController extends Controller
     }
     
     function index() {
-      $review_list = Review::where("user_id","=",\Auth::id())->orderby('id', 'desc')->paginate(5);
+      $review_list = Review::where("user_id","=",\Auth::id())->orderby('created_at', 'desc')->paginate(5);
       return view('user.index_user', ['review_list' => $review_list]);
     }
 
-    // public function show(User $user) {
-    //     $user = User::find($user->id);
-    //     $review_list = Review::where("user_id", $user->id)->orderBy('created_at', 'desc')->paginate(5);
-    //     return view('user.show_user')->with($review_list);
-
-        
-        
-        
-        
-        // $user = User::all();
-        // $review_list = Review::where('user_id', '$user->id')->orderBy('created_at', 'desc')->paginate(5);
-        // return view('user.show_user', ['user' => $user, 'review_list' => $review_list]);
-    // }
+    function show($id) {
+      $review_list = Review::where("user_id", "=", $id)->orderby('created_at', 'desc')->paginate(5);
+     
+      return view('user.show_user', ['review_list' => $review_list]);
+    }
 }

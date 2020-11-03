@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="mypage">
+  <p>レビュー編集</p>
+</div>
 <body>
   <div class="create_page">
     <div class="create_form">

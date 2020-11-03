@@ -24,10 +24,14 @@ Route::post('/review/create', [App\Http\Controllers\CreateReviewController::clas
 
 Route::get('/review/show/{id}', [App\Http\Controllers\ShowReviewController::class, "show"])->name("show_review");
 
-
 Route::get('/review/edit/{id}', [App\Http\Controllers\EditReviewController::class, "edit"])->name("edit_review");
 Route::post('/review/update/{id}', [App\Http\Controllers\EditReviewController::class, "update"])->name("update_review");
 
+Route::get('/review/delete/{id}', [App\Http\Controllers\DeleteReviewController::class, "delete"])->name("delete_review");
+Route::post('/review/destroy/{id}', [App\Http\Controllers\DeleteReviewController::class, "destroy"])->name("destroy_review");
+
+
+// comments
 Route::get('/comment/create/{id}', [App\Http\Controllers\CommentController::class, "create"])->name("create_comment");
 Route::post('/comment/create', [App\Http\Controllers\CommentController::class, "store"])->name("store_comment");
 

@@ -2,7 +2,8 @@
 
 @section('content')
 <!-- <div id="app4"> -->
-
+<div class="index_top">
+</div>
 @foreach ($review_list as $review)
 <div class="review">
   <div class="review_title">{{ $review->title }}</div>
@@ -49,8 +50,8 @@
       <!-- </div> -->
     </div>
     <div class="low_contents">
-      <div class="date">投稿日: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
-      <a href="" class="user_name">投稿者: {{ $review->user->name }}</a>
+      <div class="date">Date: {{ date("Y.m.d H:i", strtotime($review->created_at)) }}</div>
+      <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">By: {{ $review->user->name }}</a>
       <!-- <div class="icon">
         <div class="left_icon">
           <a href="{{ route('edit_review', [$review->id]) }}"><i class="fas fa-edit fa-2x"></i></a>
