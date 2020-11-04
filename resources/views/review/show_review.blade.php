@@ -19,7 +19,7 @@
         @if (Auth::check())
         <div class="icon">
           <div class="left_icon">
-            <example-component></example-component>
+
           </div>
           <div class="right_icon">
             <a href="{{ route('create_comment', ['id' => $review->id]) }}" method="get">
@@ -40,7 +40,7 @@
       <div class="comments_zone">
         <div class="comment_name">Name: {{ $comment->user->name }}</div>
         <div class="comment_text">{{ $comment->message }}</div>
-        <div class="comment_date">Date: {{ date("Y.m.d H:i", strtotime($comment->created_at)) }}</div>
+        <div class="comment_date">投稿日時: {{ date("Y.m.d H:i", strtotime($comment->created_at)) }}</div>
       </div>
     @empty
       <p>コメントはまだありません</p>

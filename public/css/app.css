@@ -37745,6 +37745,168 @@ readers do not read off random characters that represent icons */
 
 .app_body {
   background-color: #555555;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+}
+
+.app_body .mypage {
+  width: 100%;
+}
+
+.app_body .mypage p {
+  color: #888888;
+  text-align: center;
+}
+
+.app_body .index_top {
+  max-width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
+}
+
+.app_body .review {
+  color: whitesmoke;
+  padding: 0 345px;
+  padding-top: 55px;
+  margin-bottom: 20px;
+}
+
+.app_body .review .review_title {
+  font-size: 18px;
+}
+
+.app_body .review .review_content {
+  width: 750px;
+  height: 365px;
+  padding-bottom: 64px;
+  border-bottom: 4px solid #888888;
+}
+
+.app_body .review .review_content .top_contents {
+  display: flex;
+}
+
+.app_body .review .review_content .top_contents img {
+  width: 300px;
+  height: 300px;
+}
+
+.app_body .review .review_content .top_contents .content_right {
+  margin-left: 150px;
+}
+
+.app_body .review .review_content .top_contents .content_right .review_link {
+  height: 300px;
+  width: 300px;
+}
+
+.app_body .review .review_content .low_contents {
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.app_body .review .review_content .low_contents .user_name {
+  margin-left: auto;
+  margin-right: 10px;
+  color: whitesmoke;
+}
+
+.app_body .review .review_content .low_contents .user_name a {
+  text-decoration: none;
+}
+
+.app_body .review .review_content .low_contents .icon {
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.app_body .review .review_content .low_contents .icon .left_icon {
+  cursor: pointer;
+}
+
+.app_body .review .review_content .low_contents .icon .left_icon .fa-edit {
+  color: white;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon {
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon .fa-trash-alt {
+  color: white;
+  margin-right: 20px;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon .fa-comments {
+  color: white;
+}
+
+.app_body .desc {
+  width: 100%;
+}
+
+.app_body .desc .review_desc {
+  color: whitesmoke;
+  width: 800px;
+  height: 200px;
+  overflow: scroll;
+  background-color: #888888;
+  margin-left: 320px;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+.app_body .comments {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.app_body .comments .comments_area {
+  color: whitesmoke;
+  width: 800px;
+  height: 200px;
+  overflow: scroll;
+  background-color: #888888;
+  margin-left: 320px;
+  margin-bottom: 30px;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+.app_body .comments .comments_area .comments_zone {
+  padding-bottom: 5px;
+  border-bottom: #999999 2px solid;
+  margin-top: 5px;
+}
+
+.app_body .comments .comments_area .comments_zone .comment_date {
+  font-size: 11px;
+}
+
+.app_body .paginate {
+  width: 350px;
+  margin-left: 460px;
+  margin-bottom: 50px;
+}
+
+.app_body footer {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  background-color: #ff6600;
+}
+
+.app_body footer p {
+  line-height: 55px;
+  text-align: center;
+  color: whitesmoke;
 }
 
 body {
@@ -37852,142 +38014,6 @@ body .create_page .create_form .post_button .submit_button {
   border-radius: 0.4rem;
   color: whitesmoke;
   font-weight: bold;
-}
-
-.mypage {
-  width: 100%;
-}
-
-.mypage p {
-  color: #888888;
-  text-align: center;
-}
-
-.index_top {
-  max-width: 100%;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: 100% 200px;
-}
-
-.review {
-  color: whitesmoke;
-  padding: 0 345px;
-  margin-bottom: 50px;
-}
-
-.review .review_title {
-  font-size: 18px;
-}
-
-.review .review_content {
-  width: 750px;
-  height: 350px;
-  padding-bottom: 64px;
-  border-bottom: 4px solid #888888;
-}
-
-.review .review_content .top_contents {
-  display: flex;
-}
-
-.review .review_content .top_contents img {
-  width: 300px;
-  height: 300px;
-}
-
-.review .review_content .top_contents .content_right {
-  margin-left: 150px;
-}
-
-.review .review_content .top_contents .content_right .review_link {
-  height: 300px;
-  width: 300px;
-}
-
-.review .review_content .low_contents {
-  display: flex;
-  margin-top: 10px;
-}
-
-.review .review_content .low_contents .user_name {
-  margin-left: auto;
-  margin-right: 10px;
-  color: whitesmoke;
-}
-
-.review .review_content .low_contents .user_name a {
-  text-decoration: none;
-}
-
-.review .review_content .low_contents .icon {
-  display: flex;
-  margin-left: auto;
-  margin-right: 10px;
-}
-
-.review .review_content .low_contents .icon .left_icon .fa-edit {
-  color: white;
-}
-
-.review .review_content .low_contents .icon .right_icon {
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.review .review_content .low_contents .icon .right_icon .fa-trash-alt {
-  color: white;
-  margin-right: 20px;
-}
-
-.review .review_content .low_contents .icon .right_icon .fa-comments {
-  color: white;
-}
-
-.desc {
-  width: 100%;
-}
-
-.desc .review_desc {
-  color: whitesmoke;
-  width: 800px;
-  height: 200px;
-  overflow: scroll;
-  background-color: #888888;
-  margin-left: 320px;
-  border-radius: 0.3rem;
-  padding: 10px;
-}
-
-.comments {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.comments .comments_area {
-  color: whitesmoke;
-  width: 800px;
-  height: 200px;
-  overflow: scroll;
-  background-color: #888888;
-  margin-left: 320px;
-  border-radius: 0.3rem;
-  padding: 10px;
-}
-
-.comments .comments_area .comments_zone {
-  padding-bottom: 5px;
-  border-bottom: #999999 2px solid;
-  margin-top: 5px;
-}
-
-.comments .comments_area .comments_zone .comment_date {
-  font-size: 11px;
-}
-
-.paginate {
-  width: 350px;
-  margin-left: 460px;
 }
 
 .comment_page {

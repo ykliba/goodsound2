@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'goodsounds') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <script src="/js/app.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -28,9 +28,9 @@
 
 </head>
 <body class="app_body"> 
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="header">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" id="header" style="position:fixed; width: 100%; margin-bottom: 40px; background-color: #ff6633; color: whitesmoke;">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/') }}" style="color: whitesmoke;">
                 {{ config('app.name', 'goodsounds') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -84,10 +84,14 @@
             </div>
         </div>
     </nav>
-
+  
     <main class="py-4">
         @yield('content')
     </main>
-   
+    <footer>
+      <p>©️goodsounds</p>
+    </footer>
+
+  <script src="{{ mix('js/app.js') }}"></script> 
 </body>
 </html>

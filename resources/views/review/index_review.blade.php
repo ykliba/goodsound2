@@ -48,8 +48,8 @@
       <!-- </div> -->
     </div>
     <div class="low_contents">
-      <div class="date">Date: {{ date("Y.m.d H:i", strtotime($review->created_at)) }}</div>
-      <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">By: {{ $review->user->name }}</a>
+      <div class="date">投稿日時: {{ date("Y.m.d H:i", strtotime($review->created_at)) }}</div>
+      <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">投稿者: {{ $review->user->name }}</a>
       <!-- <div class="icon">
         <div class="left_icon">
           <a href="{{ route('edit_review', [$review->id]) }}"><i class="fas fa-edit fa-2x"></i></a>
