@@ -37864,9 +37864,10 @@ body .create_page .create_form .post_button .submit_button {
 }
 
 .index_top {
-  width: 100%;
+  max-width: 100%;
   height: 200px;
-  background-image: url("/asset/storage/img/vynal.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
 }
 
 .review {

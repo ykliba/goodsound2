@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- <div id="app4"> -->
-<div class="index_top">
-</div>
+
 @foreach ($review_list as $review)
 <div class="review">
   <div class="review_title">{{ $review->title }}</div>
