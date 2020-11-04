@@ -10,8 +10,8 @@
     <title>{{ config('app.name', 'goodsounds') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" ></script>
-    <script src="/js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="/js/app.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
  
@@ -27,115 +27,67 @@
 
 
 </head>
-<body class="app_body">
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="header">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'goodsounds') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="app_body"> 
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="header">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                {{ config('app.name', 'goodsounds') }}
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                        </li>
+                        @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('index_user') }}">
+                                    {{ __('Mypage') }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('index_user') }}">
-                                        {{ __('Mypage') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                    <li class="nav-item">
-                                      <a class="nav-link" href="{{ route('create_review') }}">レビュー投稿</a>
-                                    </li>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-
-<!-- <script>
-Vue.component('delete-modal',{
-  export default {
-    props: ['review'],
-  },
-  template : `
-    <div id="overlay" v-on:click="clickEvent">
-        <div id="content">
-            <p>レビューを削除しますか?</p>
-            <p><slot></slot></p>
-            <div class="delete_button">
-              
-                @csrf
-                <button type="submit" class="delete_yes">Yes</button>
-                <button type="submit" class="delete_no" v-on:click="clickEvent">No</button>
-              </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('create_review') }}">レビュー投稿</a>
+                                </li>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
             </div>
         </div>
-    </div>
-    `,
-    methods :{
-      clickEvent: function(){
-        this.$emit('from-child')
-       }
-    }
-})
+    </nav>
 
-new Vue({
-   el: '#app3',
-  data: {
-    showContent: false
-  },
-  methods:{ 
-    openModal: function(){
-    this.showContent = true
-    },    
-    closeModal: function(){
-    this.showContent = false
-    },
-},
-
-})
-</script>  -->
-
-
+    <main class="py-4">
+        @yield('content')
+    </main>
+   
 </body>
 </html>

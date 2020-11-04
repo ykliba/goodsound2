@@ -14,6 +14,7 @@ const tailwindcss = require('tailwindcss');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .sourceMaps().js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps() 
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="app4">
+<div id="app">
   <div class="review">
     <div class="review_title">{{ $review->title }}</div>
     <div class="review_artist">{{ $review->artist }}</div>
@@ -19,7 +19,7 @@
         @if (Auth::check())
         <div class="icon">
           <div class="left_icon">
-            <a href="{{ route('edit_review', [$review->id]) }}"></a>
+            <example-component></example-component>
           </div>
           <div class="right_icon">
             <a href="{{ route('create_comment', ['id' => $review->id]) }}" method="get">
