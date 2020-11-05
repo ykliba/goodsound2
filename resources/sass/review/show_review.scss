@@ -1,0 +1,108 @@
+#app {
+  .review_show {
+    color: whitesmoke;
+    padding: 0 320px;
+    padding-top: 55px;
+    margin-bottom: 20px;
+    width: 100%;
+    .review_title {
+      font-size: 18px;
+    }
+    .review_content_show {
+      width: 800px;
+      height: 360px;
+      border-bottom: 4px solid #888888;
+      .top_contents {
+
+        .content_right {
+
+        }
+      }
+      .top_contents_user {        
+        img {
+          cursor: pointer;
+          width: 350px;
+          height: 350px;
+          
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+      .low_contents {
+        display: flex;
+        margin-top: 10px;
+        // padding-bottom: 20px;
+        .user_name {
+          margin-left: auto;
+          margin-right: 10px;
+          color: whitesmoke;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }    
+    }
+  }
+  .desc_show {
+    width: 100%;
+    .review_desc {
+      color: whitesmoke;
+      width: 800px;
+      height: 200px;
+      overflow: scroll;
+      background-color: #888888;
+      margin-left: 320px;
+      border-radius: 0.3rem;
+      padding: 10px;
+    }
+  }
+  .icon_show {
+    display: flex;
+    width: 800px;
+    height: 40px;
+    margin-left: 320px;
+    .icons {
+      height: 40px;
+      margin-left: 20px;
+      .left_icon {
+        cursor: pointer;
+      }
+      .right_icon_show {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        
+        .fa-comments {
+          color: white;
+          cursor: pointer;
+        }  
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .comments {
+    width: 100%;
+    .comments_area {
+      color: whitesmoke;
+      width: 800px;
+      height: 200px;
+      overflow: scroll;
+      background-color: #888888;
+      margin-left: 320px;
+      margin-bottom: 30px;
+      border-radius: 0.3rem;
+      padding: 10px;
+      .comments_zone {
+        padding-bottom: 5px;
+        border-bottom: #999999 2px solid;
+        margin-top: 5px;
+        .comment_date {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

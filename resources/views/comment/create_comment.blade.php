@@ -8,7 +8,6 @@
         @csrf
 
         <div class="text_form">
-          <!-- 説明 -->
           <input type="hidden" name="user_id" value="{{ $user_id }}">
           <input type="hidden" name="review_id" value="{{ $review_id }}">
           <textarea type="text" name="message" class="desc_input" rows="10" placeholder="コメント入力"></textarea>
@@ -19,7 +18,6 @@
         
         <div class="post_button">
           <input type="submit" value="SEND" class="submit_button">
-          <input type="submit" class="cancel_button" value="CANCEL" v-on:click="clickEvent">
         </div>
       </form>
     </div>
