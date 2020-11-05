@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'goodsounds') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <script src="/js/app.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -28,9 +28,9 @@
 
 </head>
 <body class="app_body"> 
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" id="header">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" id="header" style="position:fixed; width: 100%; margin-bottom: 40px; background-color: #ff6633; color: whitesmoke;">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/') }}" style="color: whitesmoke;">
                 {{ config('app.name', 'goodsounds') }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -48,16 +48,16 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}" style="color: whitesmoke;">{{ __('ログイン') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}" style="color: whitesmoke;">{{ __('新規登録') }}</a>
                             </li>
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: whitesmoke;">
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -65,17 +65,17 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('ログアウト') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('index_user') }}">
-                                    {{ __('Mypage') }}
+                                    {{ __('マイページ') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('create_review') }}">レビュー投稿</a>
+                                    <a class="nav-link" href="{{ route('create_review') }}" style="color: whitesmoke;">レビュー投稿</a>
                                 </li>
                             </div>
                         </li>
@@ -84,10 +84,14 @@
             </div>
         </div>
     </nav>
-
+  
     <main class="py-4">
         @yield('content')
     </main>
-   
+    <footer>
+      <p>©️goodsounds 2020</p>
+    </footer>
+
+  <script src="{{ mix('js/app.js') }}"></script> 
 </body>
 </html>

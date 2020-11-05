@@ -37745,6 +37745,184 @@ readers do not read off random characters that represent icons */
 
 .app_body {
   background-color: #555555;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+}
+
+.app_body .mypage {
+  width: 100%;
+  height: 20px;
+  margin-top: 55px;
+}
+
+.app_body .mypage p {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.app_body .review {
+  color: whitesmoke;
+  padding: 0 345px;
+  margin-bottom: 20px;
+}
+
+.app_body .review .review_title {
+  font-size: 18px;
+}
+
+.app_body .review .review_content {
+  width: 800px;
+  height: 400px;
+  padding-bottom: 64px;
+  border-bottom: 4px solid #888888;
+}
+
+.app_body .review .review_content .top_contents {
+  display: flex;
+}
+
+.app_body .review .review_content .top_contents img {
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
+}
+
+.app_body .review .review_content .top_contents img:hover {
+  opacity: 0.5;
+}
+
+.app_body .review .review_content .top_contents .content_right {
+  margin-left: 100px;
+  height: 350px;
+  width: 350px;
+  background-color: #777777;
+  border-radius: 0.3rem;
+}
+
+.app_body .review .review_content .top_contents .content_right .review_desc {
+  height: 350px;
+  width: 350px;
+  overflow: scroll;
+  padding: 10px;
+  border-radius: 0.3rem;
+}
+
+.app_body .review .review_content .top_contents_user img {
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
+}
+
+.app_body .review .review_content .top_contents_user img:hover {
+  opacity: 0.5;
+}
+
+.app_body .review .review_content .low_contents {
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.app_body .review .review_content .low_contents .user_name {
+  margin-left: auto;
+  margin-right: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.app_body .review .review_content .low_contents .user_name:hover {
+  opacity: 0.5;
+}
+
+.app_body .review .review_content .low_contents .icon {
+  display: flex;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.app_body .review .review_content .low_contents .icon .left_icon {
+  cursor: pointer;
+}
+
+.app_body .review .review_content .low_contents .icon .left_icon .fa-edit {
+  color: white;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon .fa-trash-alt {
+  color: white;
+}
+
+.app_body .review .review_content .low_contents .icon .right_icon .fa-comments {
+  color: white;
+  cursor: pointer;
+}
+
+.app_body .desc {
+  width: 100%;
+}
+
+.app_body .desc .review_desc {
+  color: whitesmoke;
+  width: 800px;
+  height: 200px;
+  overflow: scroll;
+  background-color: #888888;
+  margin-left: 345px;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+.app_body .comments {
+  width: 100%;
+}
+
+.app_body .comments .comments_area {
+  color: whitesmoke;
+  width: 800px;
+  height: 200px;
+  overflow: scroll;
+  background-color: #888888;
+  margin-left: 320px;
+  margin-bottom: 30px;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+.app_body .comments .comments_area .comments_zone {
+  padding-bottom: 5px;
+  border-bottom: #999999 2px solid;
+  margin-top: 5px;
+}
+
+.app_body .comments .comments_area .comments_zone .comment_date {
+  font-size: 11px;
+}
+
+.app_body .paginate {
+  width: 350px;
+  margin-left: 460px;
+  margin-bottom: 50px;
+}
+
+.app_body footer {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  background-color: #666666;
+}
+
+.app_body footer p {
+  line-height: 55px;
+  text-align: center;
+  color: #ff6633;
 }
 
 body {
@@ -37754,10 +37932,10 @@ body {
 body .create_page {
   background-color: whitesmoke;
   width: 800px;
-  height: 660px;
+  height: 640px;
   border-radius: 0.8rem;
   margin-left: 320px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 body .create_page .create_form {
@@ -37854,140 +38032,119 @@ body .create_page .create_form .post_button .submit_button {
   font-weight: bold;
 }
 
-.mypage {
+#app .review_show {
+  color: whitesmoke;
+  padding: 0 320px;
+  padding-top: 55px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
-.mypage p {
-  color: #888888;
-  text-align: center;
-}
-
-.index_top {
-  max-width: 100%;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: 100% 200px;
-}
-
-.review {
-  color: whitesmoke;
-  padding: 0 345px;
-  margin-bottom: 50px;
-}
-
-.review .review_title {
+#app .review_show .review_title {
   font-size: 18px;
 }
 
-.review .review_content {
-  width: 750px;
-  height: 350px;
-  padding-bottom: 64px;
+#app .review_show .review_content_show {
+  width: 800px;
+  height: 360px;
   border-bottom: 4px solid #888888;
 }
 
-.review .review_content .top_contents {
-  display: flex;
+#app .review_show .review_content_show .top_contents_user img {
+  cursor: pointer;
+  width: 350px;
+  height: 350px;
 }
 
-.review .review_content .top_contents img {
-  width: 300px;
-  height: 300px;
+#app .review_show .review_content_show .top_contents_user img:hover {
+  opacity: 0.5;
 }
 
-.review .review_content .top_contents .content_right {
-  margin-left: 150px;
-}
-
-.review .review_content .top_contents .content_right .review_link {
-  height: 300px;
-  width: 300px;
-}
-
-.review .review_content .low_contents {
+#app .review_show .review_content_show .low_contents {
   display: flex;
   margin-top: 10px;
 }
 
-.review .review_content .low_contents .user_name {
+#app .review_show .review_content_show .low_contents .user_name {
   margin-left: auto;
   margin-right: 10px;
   color: whitesmoke;
-}
-
-.review .review_content .low_contents .user_name a {
   text-decoration: none;
 }
 
-.review .review_content .low_contents .icon {
+#app .review_show .review_content_show .low_contents .user_name:hover {
+  opacity: 0.5;
+}
+
+#app .desc_show {
+  width: 100%;
+}
+
+#app .desc_show .review_desc {
+  color: whitesmoke;
+  width: 800px;
+  height: 200px;
+  overflow: scroll;
+  background-color: #888888;
+  margin-left: 320px;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+#app .icon_show {
   display: flex;
-  margin-left: auto;
-  margin-right: 10px;
+  width: 800px;
+  height: 40px;
+  margin-left: 320px;
 }
 
-.review .review_content .low_contents .icon .left_icon .fa-edit {
-  color: white;
+#app .icon_show .icons {
+  height: 40px;
+  margin-left: 20px;
 }
 
-.review .review_content .low_contents .icon .right_icon {
+#app .icon_show .icons .left_icon {
   cursor: pointer;
-  margin-left: 10px;
 }
 
-.review .review_content .low_contents .icon .right_icon .fa-trash-alt {
+#app .icon_show .icons .right_icon_show {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+#app .icon_show .icons .right_icon_show .fa-comments {
   color: white;
-  margin-right: 20px;
+  cursor: pointer;
 }
 
-.review .review_content .low_contents .icon .right_icon .fa-comments {
-  color: white;
+#app .icon_show .icons .right_icon_show:hover {
+  opacity: 0.5;
 }
 
-.desc {
+#app .comments {
   width: 100%;
 }
 
-.desc .review_desc {
+#app .comments .comments_area {
   color: whitesmoke;
   width: 800px;
   height: 200px;
   overflow: scroll;
   background-color: #888888;
   margin-left: 320px;
+  margin-bottom: 30px;
   border-radius: 0.3rem;
   padding: 10px;
 }
 
-.comments {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.comments .comments_area {
-  color: whitesmoke;
-  width: 800px;
-  height: 200px;
-  overflow: scroll;
-  background-color: #888888;
-  margin-left: 320px;
-  border-radius: 0.3rem;
-  padding: 10px;
-}
-
-.comments .comments_area .comments_zone {
+#app .comments .comments_area .comments_zone {
   padding-bottom: 5px;
   border-bottom: #999999 2px solid;
   margin-top: 5px;
 }
 
-.comments .comments_area .comments_zone .comment_date {
+#app .comments .comments_area .comments_zone .comment_date {
   font-size: 11px;
-}
-
-.paginate {
-  width: 350px;
-  margin-left: 460px;
 }
 
 .comment_page {
@@ -37996,7 +38153,7 @@ body .create_page .create_form .post_button .submit_button {
   height: 360px;
   border-radius: 0.8rem;
   margin-left: 320px;
-  margin-top: 40px;
+  margin-top: 150px;
 }
 
 .comment_page .comment_form {
@@ -38030,7 +38187,7 @@ body .create_page .create_form .post_button .submit_button {
 .comment_page .comment_form .post_button .submit_button {
   width: 100px;
   height: 40px;
-  margin-left: 200px;
+  margin-left: 255px;
   background-color: #444444;
   border-radius: 0.4rem;
   color: whitesmoke;

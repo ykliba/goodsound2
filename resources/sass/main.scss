@@ -1,5 +1,161 @@
 .app_body {
   background-color: #555555;
- 
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+  .mypage {
+    width: 100%;
+    height: 20px;
+    margin-top: 55px;
+    p {
+      color: whitesmoke;
+      text-align: center;
+    }
+  }
+  .review {
+    color: whitesmoke;
+    padding: 0 345px;
+    margin-bottom: 20px;
+
+    .review_title {
+      font-size: 18px;
+    }
+    .review_content {
+      width: 800px;
+      height: 400px;
+      padding-bottom: 64px;
+      border-bottom: 4px solid #888888;
+      .top_contents {
+        display: flex;
+          img {
+            cursor: pointer;
+            width: 350px;
+            height: 350px;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        .content_right {
+          margin-left: 100px;
+          height: 350px;
+          width: 350px;
+          background-color: #777777;
+          border-radius: 0.3rem;
+          .review_desc {
+            height: 350px;
+            width: 350px;
+            overflow: scroll;
+            padding: 10px;
+            border-radius: 0.3rem;
+          }
+        }
+      }
+      .top_contents_user {        
+        img {
+          cursor: pointer;
+          width: 350px;
+          height: 350px;
+          
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+      .low_contents {
+        display: flex;
+        margin-top: 10px;
+        padding-bottom: 20px;
+        .user_name {
+          margin-left: auto;
+          margin-right: 10px;
+          color: whitesmoke;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        .icon {
+          display: flex;
+          margin-left: auto;
+          margin-right: 10px;
+          .left_icon {
+            cursor: pointer;
+            .fa-edit {
+              color: white;
+            }
+          }
+          .right_icon {
+            cursor: pointer;
+            margin-left: 20px;
+            .fa-trash-alt {
+              color:white;
+           
+            }
+            .fa-comments {
+              color: white;
+              cursor: pointer;
+            } 
+          }
+        }
+      }    
+    }
+  }
+  .desc {
+    width: 100%;
+    .review_desc {
+      color: whitesmoke;
+      width: 800px;
+      height: 200px;
+      overflow: scroll;
+      background-color: #888888;
+      margin-left: 345px;
+      border-radius: 0.3rem;
+      padding: 10px;
+    }
+  }
+
+  .comments {
+    width: 100%;
+    // margin-top: 50px;
+    .comments_area {
+      color: whitesmoke;
+      width: 800px;
+      height: 200px;
+      overflow: scroll;
+      background-color: #888888;
+      margin-left: 320px;
+      margin-bottom: 30px;
+      border-radius: 0.3rem;
+      padding: 10px;
+      .comments_zone {
+        padding-bottom: 5px;
+        border-bottom: #999999 2px solid;
+        margin-top: 5px;
+        .comment_date {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .paginate {
+    width: 350px;
+    margin-left: 460px;
+    margin-bottom: 50px;
+  }
+  footer {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    background-color: #666666;
+    p {
+      line-height: 55px;
+      text-align: center;
+    
+      color: #ff6633;
+    }
+  }
 }
+
 
