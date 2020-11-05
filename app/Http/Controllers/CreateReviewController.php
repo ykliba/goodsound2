@@ -61,16 +61,16 @@ class CreateReviewController extends Controller
 		// 画像保存
 		$is_change_image = false;		
 		if(isset($uploadInput["image"])) {
-			$path = $uploadInput["image"]->store("img");
+			$path = $uploadInput["image"]->store('public');
 			if($path){
-				$review->image = $path;
+				$review->image = str_replace('public/', '', $path);
 				$is_change_image = true;
 			}
 		}
 		if($is_change_image){
 			$review->save();
 		}
-    \Debugbar::addMessage($review);
+   
 		return view("review.store_review");
 	}
 }
