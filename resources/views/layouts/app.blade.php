@@ -22,7 +22,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @if(app('env') == 'production')
+      <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    @else
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @endif
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 
