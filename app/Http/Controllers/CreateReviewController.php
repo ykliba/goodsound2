@@ -60,18 +60,9 @@ class CreateReviewController extends Controller
 		$review->save();
 		
 		// 画像保存
-		$is_change_image = false;		
-		if(isset($uploadInput["image"])) {
-			$path = Storage::disk('s3')->putFile('goodsoundimg', $uploadInput, 'public');
-			if($path){
-				$review->image = Storage::disk('s3')->url($path);
-				$is_change_image = true;
-			}
-		}
-		if($is_change_image){
-			$review->save();
-		}
-    
-		return view("review.store_review");
+    $path = Storage::disk('s3')->putFile('/', $uploadInput, 'public');
+    $review->image = Storage::disk('s3')->url($path);
+    $review->save();
+    return view("review.store_review");
 	}
 }
