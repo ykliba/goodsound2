@@ -8,6 +8,7 @@ use App\Models\User;
 use Storage;
 use Validator;
 
+
 class CreateReviewController extends Controller
 {
   function __construct(){
@@ -61,16 +62,16 @@ class CreateReviewController extends Controller
 		// 画像保存
 		$is_change_image = false;		
 		if(isset($uploadInput["image"])) {
-			$path = $uploadInput["image"]->store('public');
+			$path = Storage::disk('s3')->putFile('/', $uploadInput, 'public');
 			if($path){
-				$review->image = str_replace('public/', '', $path);
+				$review->image = Storage::disk('s3')->url($path);
 				$is_change_image = true;
 			}
 		}
 		if($is_change_image){
 			$review->save();
 		}
-   
+    
 		return view("review.store_review");
 	}
 }
