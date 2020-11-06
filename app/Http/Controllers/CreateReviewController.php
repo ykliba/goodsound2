@@ -62,7 +62,7 @@ class CreateReviewController extends Controller
 		// 画像保存
 		$is_change_image = false;		
 		if(isset($uploadInput["image"])) {
-			$path = Storage::disk('s3')->putFile('/', $uploadInput, 'public');
+			$path = Storage::disk('s3')->putFile('goodsoundimg', $uploadInput, 'public');
 			if($path){
 				$review->image = Storage::disk('s3')->url($path);
 				$is_change_image = true;
