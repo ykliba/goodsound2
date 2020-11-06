@@ -20,4 +20,4 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
-php_value memory_limit 200M
+

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+<?php
+phpinfo();
+?>
 @section('content')
 <div class="mypage">
   <p></p>
