@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Models\User; 
-use Storage;
+use Illuminate\Support\Facades\Storage;
 use Validator;
 
 
@@ -60,7 +61,7 @@ class CreateReviewController extends Controller
 		$review->save();
 		
 		// 画像保存
-    $path = Storage::disk('s3')->putFile('/', $uploadInput, 'public');
+		$path = Storage::disk('s3')->putFile('/', $uploadInput['image'], 'public');
     $review->image = Storage::disk('s3')->url($path);
     $review->save();
     return view("review.store_review");
