@@ -11,7 +11,7 @@
   <div class="review_content">
     <div class="top_contents">
       <a href="{{ route('show_review', ['id' => $review->id]) }}">
-        <img src="{{ asset('storage/'.$review->image) }}" class="review_image">
+        <img src="{{ $review->image }}" class="review_image">
       </a>
       <div class="content_right">
         <div class="review_link">
