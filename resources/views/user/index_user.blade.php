@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="mypage">
-  <p>マイページ</p>
+  <p>My Page</p>
 </div>
 @foreach ($review_list as $review)
 <div class="review">
