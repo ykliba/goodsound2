@@ -37764,8 +37764,9 @@ readers do not read off random characters that represent icons */
 
 .app_body .review {
   color: whitesmoke;
-  padding: 0 345px;
+  padding: 0 320px;
   margin-bottom: 20px;
+  width: 800px;
 }
 
 .app_body .review .review_title {

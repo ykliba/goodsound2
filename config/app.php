@@ -229,5 +229,6 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
-
+    
+    'log' => env('LOG_OUTPUT', 'errorlog'),
 ];
