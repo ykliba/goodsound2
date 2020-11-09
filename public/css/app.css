@@ -37771,6 +37771,11 @@ readers do not read off random characters that represent icons */
 
 .app_body .review .review_title {
   font-size: 19px;
+  width: 350px;
+}
+
+.app_body .review .review_artist {
+  width: 350px;
 }
 
 .app_body .review .review_content {
@@ -38007,11 +38012,23 @@ body .create_page .create_form .link_form {
   height: 80px;
   width: 600px;
   margin-bottom: 20px;
-  margin-left: 45px;
+  display: flex;
 }
 
-body .create_page .create_form .link_form .link_input {
-  margin-left: 11px;
+body .create_page .create_form .link_form .link_icon {
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+body .create_page .create_form .link_form .link_icon .fa-youtube {
+  color: red;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+body .create_page .create_form .link_form input.link_input {
+  margin-left: 0px;
   margin-top: 10px;
   height: 50px;
   width: 500px;
