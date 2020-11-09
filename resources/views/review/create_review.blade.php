@@ -42,9 +42,12 @@
 
         <div class="link_form">
           <!-- YouTubeリンク -->
-          <input type="url" name="link" class="link_input" value="{{ old('link') }}" placeholder="YouTube URL">
+          <div class="link_icon">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fa-2x"></i></a>
+          </div>
+          <input type="url" name="link" class="link_input" value="{{ old('link') }}" placeholder="コピーしたYouTube URLを貼り付け" >
           @if ($errors->has('link'))
-					  <div class="error">{{ $errors->first('link') }}</div>
+					<div class="error">{{ $errors->first('link') }}</div>
 					@endif
         </div>
         
