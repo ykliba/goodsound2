@@ -3,7 +3,7 @@
 @section('content')
 <div class="search_form">
   <form class="search" action="{{ route('search_review') }}">
-    <input type="text"  name="keyword" class="search_input" placeholder="タイトル、アーティスト名で検索">
+    <input type="text"  name="keyword" class="search_input" placeholder="アーティスト名検索">
     <input type="submit" value="&#xf002;" class="fas">
   </form>
 </div>
@@ -21,8 +21,7 @@
       </div>
     </div>
     <div class="low_contents">
-      <div class="date">投稿日: {{ date("Y.m.d", strtotime($search->created_at)) }}</div>
-      
+      <div class="date">date: {{ date("Y.m.d", strtotime($search->created_at)) }}</div>
     </div>
   </div>
 </div>

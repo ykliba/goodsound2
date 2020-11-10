@@ -61,9 +61,13 @@ class CreateReviewController extends Controller
 		$review->save();
 		
 		// 画像保存
-		$path = Storage::disk('s3')->putFile('/', $uploadInput['image'], 'public');
-    $review->image = Storage::disk('s3')->url($path);
-    $review->save();
-    return view("review.store_review");
+		if (empty($uploadInput)) {
+			return redirect('/');
+		} else {
+			$path = Storage::disk('s3')->putFile('/', $uploadInput['image'], 'public');
+			$review->image = Storage::disk('s3')->url($path);
+			$review->save();
+			return redirect('/');
+		}
 	}
 }

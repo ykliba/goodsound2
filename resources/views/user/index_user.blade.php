@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="low_contents">
-      <div class="date">投稿日: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
+      <div class="date">Date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
       <div class="icon">
         <div class="left_icon">
           <a href="{{ route('edit_review', [$review->id]) }}"><i class="fas fa-edit fa-2x"></i></a>
