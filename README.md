@@ -2,7 +2,7 @@
 
 
 ## 名盤レビュー投稿アプリ
-![top画像]()
+![top画像](https://user-images.githubusercontent.com/62545741/98650144-d5cf1500-237b-11eb-8648-111533b76f47.png)
 [goodsoundsはこちらから](https://goodsound2.herokuapp.com/)
 
 
