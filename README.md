@@ -24,7 +24,7 @@
 
 ## 使用技術
 - Laravel,PHP,HTML,Sass,MySQL,GitHub
-- Herokuデプロイ
+- Herokuにデプロイ
 - 画像ファイルはAWS S3に保存
 
 ## 制作背景
