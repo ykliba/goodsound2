@@ -37762,6 +37762,23 @@ readers do not read off random characters that represent icons */
   text-align: center;
 }
 
+.app_body .search_form {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.app_body .search_form .search .search_input {
+  width: 300px;
+  height: 30px;
+  margin-left: 570px;
+  border-radius: 0.3rem;
+}
+
+.app_body .search_form .search .fas {
+  color: #777777;
+}
+
 .app_body .review {
   color: whitesmoke;
   padding: 0 320px;
@@ -37911,10 +37928,13 @@ readers do not read off random characters that represent icons */
   font-size: 11px;
 }
 
-.app_body .paginate {
-  width: 350px;
-  margin-left: 460px;
-  margin-bottom: 50px;
+.app_body .page {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.app_body .page .paginate {
+  display: inline-block;
 }
 
 .app_body footer {
@@ -37969,6 +37989,9 @@ body .create_page .create_form .form .image_input {
 
 body .create_page .create_form .form .error {
   color: red;
+  height: 23px;
+  width: 500px;
+  padding-left: 60px;
 }
 
 body .create_page .create_form .text_form {
@@ -37986,6 +38009,10 @@ body .create_page .create_form .text_form .desc_input {
 
 body .create_page .create_form .text_form .error {
   color: red;
+  height: 23px;
+  width: 500px;
+  padding-left: 13px;
+  padding-bottom: 5px;
 }
 
 body .create_page .create_form .image_form {
@@ -38016,7 +38043,7 @@ body .create_page .create_form .link_form {
 }
 
 body .create_page .create_form .link_form .link_icon {
-  margin-top: 12px;
+  margin-top: 13px;
   margin-left: 15px;
 }
 

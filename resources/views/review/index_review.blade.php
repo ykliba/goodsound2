@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mypage">
-  <p></p>
+<div class="search_form">
+  <form class="search" action="{{ route('search_review') }}">
+    <input type="text" name="keyword" class="search_input" placeholder="アーティスト名で検索">
+    <input type="submit" value="&#xf002;" class="fas">
+  </form>
 </div>
 @foreach ($review_list as $review)
 <div class="review">
@@ -24,6 +27,8 @@
   </div>
 </div>
 @endforeach
-<div class="paginate">{{ $review_list->links() }}</div>
+<div class="page">
+  <div class="paginate">{{ $review_list->links() }}</div>
+</div>
 
 @endsection
