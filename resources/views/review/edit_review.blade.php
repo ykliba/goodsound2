@@ -25,7 +25,6 @@
 					  <div class="error">{{ $errors->first('artist') }}</div>
 					@endif
         </div>
-
         <div class="text_form">
           <!-- 説明 -->
           <textarea type="text" name="desc" class="desc_input" rows="10" placeholder="text">{{ old('desc', $review->desc) }}</textarea>
