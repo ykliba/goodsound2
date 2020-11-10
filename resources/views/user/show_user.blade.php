@@ -20,8 +20,8 @@
       </div>
     </div>
     <div class="low_contents">
-      <div class="date">date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
-      <div class="user_name">投稿者: {{ $review->user->name }}</div>
+      <div class="date">Date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
+      <div class="user_name">By: {{ $review->user->name }}</div>
     </div>
   </div>
 </div>
