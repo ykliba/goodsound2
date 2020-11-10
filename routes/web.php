@@ -30,6 +30,8 @@ Route::post('/review/update/{id}', [App\Http\Controllers\EditReviewController::c
 Route::get('/review/delete/{id}', [App\Http\Controllers\DeleteReviewController::class, "delete"])->name("delete_review");
 Route::post('/review/destroy/{id}', [App\Http\Controllers\DeleteReviewController::class, "destroy"])->name("destroy_review");
 
+Route::get('/review/search', [App\Http\Controllers\SearchController::class, "index"])->name('search_review');
+
 
 // comments
 Route::get('/comment/create/{id}', [App\Http\Controllers\CommentController::class, "create"])->name("create_comment");

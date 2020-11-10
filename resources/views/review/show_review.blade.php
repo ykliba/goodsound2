@@ -16,6 +16,7 @@
         </div>
       <div class="low_contents">
         <div class="date">投稿日: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
+        <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">投稿者: {{ $review->user->name }}</a>
       </div>
     </div>
   </div>
