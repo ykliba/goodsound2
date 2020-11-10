@@ -21,8 +21,8 @@
       </div>
     </div>
     <div class="low_contents">
-      <div class="date">date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
-      <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">by: {{ $review->user->name }}</a>
+      <div class="date">Date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
+      <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">By: {{ $review->user->name }}</a>
     </div>
   </div>
 </div>
