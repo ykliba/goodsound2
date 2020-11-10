@@ -3,7 +3,7 @@
 
 ## 名盤レビュー投稿アプリ
 ![top画像]()
-[Favomusicはこちらから](https://goodsound2.herokuapp.com/)
+[goodsoundsはこちらから](https://goodsound2.herokuapp.com/)
 
 
 ## 機能
