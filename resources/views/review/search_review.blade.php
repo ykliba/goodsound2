@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="low_contents">
-      <div class="date">投稿日: {{ date("Y.m.d", strtotime($search->created_at)) }}</div>
+      <div class="date">date: {{ date("Y.m.d", strtotime($search->created_at)) }}</div>
     </div>
   </div>
 </div>
