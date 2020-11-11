@@ -20,4 +20,9 @@ class Review extends Model
     public function comments() {
         return $this->hasMany('App\Models\Comment');
     }
+
+    public function likes()
+    {
+        return $this->belongsToMany('App\Models\User')->withTimestamps();
+    }
 }

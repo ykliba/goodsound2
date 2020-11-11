@@ -8,6 +8,6 @@ use App\Models\Review;
 class LikeController extends Controller
 {
     public function like(Request $request, Review $review) {
-      dd(11);
+      
     }
 }
