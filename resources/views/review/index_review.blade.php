@@ -7,6 +7,7 @@
     <input type="submit" value="&#xf002;" class="fas">
   </form>
 </div>
+<div id="app">
 @foreach ($review_list as $review)
 <div class="review">
   <div class="review_title">{{ $review->title }}</div>
@@ -22,14 +23,13 @@
     </div>
     <div class="low_contents">
       <div class="date">Date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
-      <div id="app">
-      <like-component :post="{{ json_encode($post)}}"></like-component>
-      </div>
+      <like-component :review="{{ json_encode($review)}}"></like-component>
       <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">By: {{ $review->user->name }}</a>
     </div>
   </div>
 </div>
 @endforeach
+</div>
 <div class="page">
   <div class="paginate">{{ $review_list->links() }}</div>
 </div>
