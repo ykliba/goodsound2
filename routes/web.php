@@ -32,6 +32,11 @@ Route::post('/review/destroy/{id}', [App\Http\Controllers\DeleteReviewController
 
 Route::get('/review/search', [App\Http\Controllers\SearchController::class, "index"])->name('search_review');
 
+// likes
+Route::get('/review/{review}/like', [App\Http\Controllers\LikeController::class, "store"]);
+Route::get('/review/{review}/like', [App\Http\Controllers\LikeController::class, "destory"]);
+Route::get('/review/{review}/countlike', [App\Http\Controllers\LikeController::class, "count"]);
+
 
 // comments
 Route::get('/comment/create/{id}', [App\Http\Controllers\CommentController::class, "create"])->name("create_comment");

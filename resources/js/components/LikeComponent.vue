@@ -3,13 +3,13 @@
         <div class="row justify-content-center mt-1">
             <div class="col-md-12">
                 <div>
-                    <button>
+                    <button @click="unlike()" class="btn btn-danger" v-if="result">
                         いいね解除
                     </button>
-                    <button>
+                    <button @click="like()" class="btn btn-success" v-else>
                         いいね
                     </button>
-                    <p>いいね数：</p>
+                    <p>いいね数：{{ count }}</p>
                 </div>
             </div>
         </div>
@@ -18,9 +18,51 @@
 
 <script>
     export default {
-        props: ['post'],
+        props: ['review'],
+        data() {
+          return {
+            count: "",
+            result: "false"
+          }
+        },
         mounted () {
-            console.log(this.post);
+            this.haslike();
+            this.countlike();
+        },
+        methods: {
+            like() {
+                axios.get('/review/' + this.review.id +'/like')
+                .then(resv=> {
+                  this.count = res.data.count;
+                }).catch(function(error) {
+                    console.log(error);
+                });
+            },
+            unlike() {
+                axios.get('/review/' + this.review.id +'/unlike')
+                .then(res => {
+                  this.count = res.data.count;
+                }).catch(function(error){
+                    console.log(error);
+                });
+            },
+            countlike() {
+                axios.get('/review/' + this.review.id +'/countlike')
+                .then(res => {
+                    this.count = res.data;
+                }).catch(function(error){
+                    console.log(error);
+                });
+            },
+            haslike() {
+                axios.get('/review/' + this.review.id +'/haslike')
+                .then(res => {
+                  this.result = res.data;
+                }).catch(function(error) {
+                    console.log(error);
+                });
+            }
         }
+
      }
 </script>
