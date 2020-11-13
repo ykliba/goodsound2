@@ -34,7 +34,7 @@ Route::get('/review/search', [App\Http\Controllers\SearchController::class, "ind
 
 // likes
 Route::get('/review/{review}/like', [App\Http\Controllers\LikeController::class, "store"]);
-Route::get('/review/{review}/like', [App\Http\Controllers\LikeController::class, "destory"]);
+Route::get('/review/{review}/unlike', [App\Http\Controllers\LikeController::class, "destroy"]);
 Route::get('/review/{review}/countlike', [App\Http\Controllers\LikeController::class, "count"]);
 
 

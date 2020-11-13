@@ -32,7 +32,7 @@
         methods: {
             like() {
                 axios.get('/review/' + this.review.id +'/like')
-                .then(resv=> {
+                .then(res => {
                   this.count = res.data.count;
                 }).catch(function(error) {
                     console.log(error);
@@ -64,5 +64,5 @@
             }
         }
 
-     }
+    }
 </script>
