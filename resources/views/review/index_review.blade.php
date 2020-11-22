@@ -23,7 +23,11 @@
     </div>
     <div class="low_contents">
       <div class="date">Date: {{ date("Y.m.d", strtotime($review->created_at)) }}</div>
-      <!-- <like-component :review="{{ json_encode($review) }}"></like-component> -->
+      <div class="like">
+      @if($review->user_id != Auth::id())
+        <like :review="{{ json_encode($review->id) }}"></like>
+      @endif
+      </div>
       <a href="{{ route('show_user', ['id' => $review->user->id]) }}" class="user_name">By: {{ $review->user->name }}</a>
     </div>
   </div>

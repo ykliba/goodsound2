@@ -15,8 +15,8 @@ class CreateLikesTable extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained("users");
-            $table->foreignId('review_id')->constrained("reviews");
+            $table->foreignId('user_id')->constrained("users")->onDelete('cascade');
+            $table->foreignId('review_id')->constrained("reviews")->onDelete('cascade');
             $table->timestamps();
             
         });
