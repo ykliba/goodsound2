@@ -24,6 +24,7 @@
     @else
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
+    
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
 

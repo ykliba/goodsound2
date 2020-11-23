@@ -14,20 +14,16 @@ class Review extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsto('App\Models\User');
     }
 
     public function comments() {
         return $this->hasMany('App\Models\Comment');
     }
 
-    public function likes()
+    public function users()
     {
-        return $this->hasMany('App\Models\Like')->withTimestamps();
+        return $this->belongsToMany('App\Models\User')->withTimestamps();
     }
 
-    public function isLiked($user_id)
-    {
-        return $this->likes()->where('user_id', $user_id)->exists();
-    }
 }

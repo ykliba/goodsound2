@@ -37848,6 +37848,16 @@ readers do not read off random characters that represent icons */
   padding-bottom: 20px;
 }
 
+.app_body .review .review_content .low_contents .like {
+  margin-left: 185px;
+  display: flex;
+}
+
+.app_body .review .review_content .low_contents .like .like_count {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
 .app_body .review .review_content .low_contents .user_name {
   margin-left: auto;
   margin-right: 10px;

@@ -87,6 +87,14 @@
         display: flex;
         margin-top: 10px;
         padding-bottom: 20px;
+        .like {
+          margin-left: 185px;
+          display: flex;
+          .like_count {
+            margin-top: 5px;
+            margin-left: 10px;
+          }
+        }
         .user_name {
           margin-left: auto;
           margin-right: 10px;
