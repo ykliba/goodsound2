@@ -49,8 +49,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Comment');
     }
 
-    public function likes()
-    {
-        return $this->hasMany('App\Models\Like')->withTimestamps();
-    }
+    // public function likes()
+    // {
+    //     return $this->belongsToMany('App\Models\Review')->withTimestamps();
+    // }
 }

@@ -1,10 +1,10 @@
 <template>
-   <div>
-     <button v-if="result" type="button" @click="unlike()" class="btn btn-warning">Liked</button>
-     <button  v-else type="button" @click="like()" class="btn btn-outline-warning">Like</button>
-     <p>いいね数：{{ count }}</p>
-  </div>
- </template>
+   <div class="like">
+     <div v-if="result" type="button" @click="unlike()" class="like_button"><i class="far fa-thumbs-up fa-2x"></i></div>
+     <div  v-else type="button" @click="like()" class="like_button"><i class="fas fa-thumbs-up fa-2x"></i></div>
+     <div class="like_count">{{ count }}</div>
+   </div>
+</template>
 
 <script>
   export default {
@@ -23,15 +23,20 @@
       like() {
         axios.get('/review/' + this.review + '/like')
         .then(res => {
+          this.result = res.data.result;
           this.count = res.data.count;
         }) .catch(function(error) {
-             console.log('error');
+             console.log(error);
         });
       },
       unlike() {
         axios.get('/review/' + this.review + '/unlike')
+        .then(res => {
+          this.result = res.data.result;
+          this.count = res.data.count;
+        })
         .catch(function(error) {
-          console.log('error');
+          console.log(error);
         });
       },
       countlike() {
@@ -50,7 +55,6 @@
             console.log(error);
         });
       },
-
     }
   }
 </script>

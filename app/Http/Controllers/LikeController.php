@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Review;
-use\Auth;
+use Auth;
 
 class LikeController extends Controller
 {
@@ -43,7 +43,7 @@ class LikeController extends Controller
         return response()->json($result);
     }
 
-  public function count($id) 
+  public function count ($id) 
     {
         $review = Review::find($id);
         $count = $review->users()->count();
