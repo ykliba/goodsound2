@@ -47,7 +47,7 @@
           <div class="link_icon">
             <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube fa-2x"></i></a>
           </div>
-          <input type="url" name="link" class="link_input" value="{{ old('link', $review->link) }}" placeholder="YouTube URL">
+          <input type="url" name="link" class="link_input" value="https://www.youtube.com/watch?v={{ old('link', $review->link) }}" placeholder="YouTube URL">
           @if ($errors->has('link'))
 					  <div class="error">{{ $errors->first('link') }}</div>
 					@endif
