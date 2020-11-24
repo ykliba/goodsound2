@@ -67,7 +67,7 @@ class EditReviewController extends Controller
 			$review->update();
 			
 			// 画像保存
-			if ($uploadInput->isEmpty()) {
+			if (empty($uploadInput)) {
 				return redirect('/');
 			} else {
 				$path = Storage::disk('s3')->putFile('/', $uploadInput['image'], 'public');
