@@ -8,6 +8,7 @@ use Auth;
 
 class LikeController extends Controller
 {
+
   public function store($id)
     {
         $review = Review::find($id);
@@ -36,9 +37,9 @@ class LikeController extends Controller
     {
         $review = Review::find($id);
         if ($review->users()->where('user_id', Auth::id())->exists()) {
-            $result = true;
+          $result = true;
         } else {
-            $result = false;
+          $result = false;
         }
         return response()->json($result);
     }

@@ -46,5 +46,8 @@ Route::get('/review/{review}/unlike', [App\Http\Controllers\LikeController::clas
 Route::get('/review/{review}/countlike', [App\Http\Controllers\LikeController::class, "count"]);
 Route::get('/review/{review}/haslike', [App\Http\Controllers\LikeController::class, "haslike"]);
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+  return view('dashboard');
+})->name('dashboard');
 
 
