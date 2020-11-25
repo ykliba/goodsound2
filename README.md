@@ -24,6 +24,7 @@
 - いいね機能(Vue.jsによる実装)
 
 ## 使用技術
+
 - Laravel 8, PHP 7.4.11, HTML, Sass, Vue.js, MySQL, GitHub
 - AWS EC2にAmazon Linux2でデプロイ(EC2,S3,RDS,VPC,IAM)
 - 画像ファイルはAWS S3にアップロード
