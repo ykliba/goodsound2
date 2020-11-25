@@ -43,9 +43,9 @@ SNSでも同じことはできますが余計な情報が多いので音楽に�
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
+|name|string|  |
+|email|string|  |
+|password|string|  |
 #### Relation
 - has_many :reviews
 - has_many :comments
