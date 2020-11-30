@@ -14,7 +14,7 @@
 
 ### ログイン時
 - 投稿者ページ閲覧
-- レビュー投稿(タイトル、アーティスト名、説明、画像、YOUTUBEリンク)
+- レビュー投稿(タイトル、アーティスト名、説明、画像、YOUTUBE)
 - レビューに対するコメント機能
 - 投稿をアーティスト名で検索
 - マイページ機能
@@ -26,7 +26,7 @@
 ## 使用技術
 
 - Laravel 8, PHP 7.4.11, HTML, Sass, Vue.js, MySQL, GitHub
-- AWS EC2にAmazon Linux2でデプロイ(EC2,S3,RDS,VPC,IAM)
+- AWS EC2にAmazon Linux2でデプロイ
 - 画像ファイルはAWS S3にアップロード
 
 ## 制作背景
@@ -36,7 +36,6 @@ SNSでも同じことはできますが余計な情報が多いので音楽に�
 ## 課題
 - Vue.jsでSPA化 (※現在LaravelとVue.jsでSPAアプリ開発中)
 - レスポンシブ設定
-- CircleCIによるCI/CD
 
 ## DB
 
