@@ -21,17 +21,17 @@
 - 投稿済レビューの編集機能
 - 投稿済レビューの削除機能
 - ページネーション機能
-- いいね機能(Vue.jsによる実装)
+- いいね機能
 
 ## 使用技術
 
-- Laravel 8, PHP 7.4.11, HTML, Sass, Vue.js, MySQL, GitHub
+- Laravel, PHP, HTML, Sass, Vue.js, MySQL, GitHub
 - AWS EC2にAmazon Linux2でデプロイ
 - 画像ファイルはAWS S3にアップロード
 
 ## 制作背景
 SNSでも同じことはできますが余計な情報が多いので音楽に特化した物を作ろうと考えました。
-以前、Ruby on Railsで同じような投稿アプリを作り知人に使ってもらったところ、「音楽アプリなのに音楽が聴けない」と指摘を受けましたので今回はYOUTUBEの投稿といいね機能を追加実装しました。
+以前、Ruby on Railsでも画像とレビュー投稿のみのアプリを作ったので,今回はYOUTUBEの投稿といいね機能を追加実装しました。
 
 ## 課題
 - Vue.jsでSPA化 (※現在LaravelとVue.jsでSPAアプリ開発中)
