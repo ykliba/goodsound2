@@ -25,9 +25,9 @@
 
 ## 使用技術
 
-- Laravel, PHP, HTML, Sass, Vue.js, MySQL, GitHub
-- AWS EC2にAmazon Linux2でデプロイ
-- 画像ファイルはAWS S3にアップロード
+- Laravel, PHP, HTML, Sass, Vue.js, MySQL, Apache, GitHub
+- AWS EC2 Amazon Linux2でデプロイ
+- 画像ファイルはS3にアップロード
 
 ## 制作背景
 SNSでも同じことはできますが余計な情報が多いので音楽に特化した物を作ろうと考えました。
