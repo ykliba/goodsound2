@@ -26,12 +26,12 @@
 ## 使用技術
 
 - Laravel, PHP, HTML, Sass, Vue.js, MySQL, Apache, GitHub
-- AWS EC2 Amazon Linux2でデプロイ
+- AWS EC2 Amazon Linux2にデプロイ
 - 画像ファイルはS3にアップロード
 
 ## 制作背景
 知人にDJや音楽関係者が多く、まずは身近な人たちに使ってもらおうと思い名盤レビューアプリを作りました。SNSでも同じことはできますが音楽の情報だけのアプリが作りたかった。
-以前、Ruby on Railsでも画像とレビュー投稿のみのアプリを作りましたが機能的に寂しい感じになってしまったので今回はYOUTUBEの投稿といいね機能を追加実装しました。
+以前、Ruby on Railsでも画像とレビュー投稿のみのアプリを作りましたが今回はYOUTUBEの投稿といいね機能を追加実装しました。
 
 ## 課題
 - Vue.jsでSPA化 (※現在LaravelとVue.jsでSPAアプリ開発中)

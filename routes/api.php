@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/review/show/{id}/like', [App\Http\Controllers\LikeController::class, 'like']);
+// Route::post('/review/show/{id}/like', [App\Http\Controllers\LikeController::class, 'like']);
