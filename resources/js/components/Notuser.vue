@@ -1,7 +1,7 @@
 <template>
    <div class="like">
-     <div v-if="result" type="button"  class="like_button"><i class="far fa-thumbs-up fa-2x"></i></div>
-     <div  v-else type="button" class="like_button"><i class="fas fa-thumbs-up fa-2x"></i></div>
+     <div v-if="result"   class="like_button"><i class="far fa-thumbs-up fa-2x"></i></div>
+     <div  v-else  class="like_button"><i class="fas fa-thumbs-up fa-2x"></i></div>
      <div class="like_count">{{ count }}</div>
    </div>
 </template>
