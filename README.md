@@ -3,7 +3,7 @@
 
 ## 名盤レビュー投稿アプリ
 ![top画像](https://user-images.githubusercontent.com/62545741/98650144-d5cf1500-237b-11eb-8648-111533b76f47.png)
-[goodsoundsはこちらから](http://13.113.190.125//)
+[goodsoundsはこちらから](http://18.183.101.101/)
 - ログインEメールアドレス f.73.kawahara.yuki@gmail.com
 - ログインパスワード kawahara1
 
